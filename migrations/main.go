@@ -11,6 +11,7 @@ type migration interface {
 func getMigrations() []migration {
 	return []migration{
 		getCreateBankAcc(),
+		getCreateBankTransactions(),
 	}
 }
 
