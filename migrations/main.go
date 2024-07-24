@@ -14,6 +14,7 @@ func getMigrations() []migration {
 		getCreateBankTransactions(),
 		getCreateBankExchange(),
 		getCreateBankTransfers(),
+		getInsertBankAccount(),
 	}
 }
 

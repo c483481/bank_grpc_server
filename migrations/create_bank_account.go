@@ -18,9 +18,11 @@ func (c *createBankAccount) Up(conn *sql.Tx) error {
 		account_number VARCHAR(20) UNIQUE NOT NULL,
 		account_name VARCHAR(100) NOT NULL ,
 		currency VARCHAR(5) NOT NULL ,
+		current_balance NUMERIC(15, 2) NOT NULL ,
 		created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 		update_at TIMESTAMP NOT NULL DEFAULT NOW()
 	)`)
+
 	return err
 }
 
