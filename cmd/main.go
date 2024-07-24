@@ -5,6 +5,7 @@ import (
 	"github.com/c483481/bank_grpc_server/database"
 	"github.com/c483481/bank_grpc_server/internal/adapter"
 	"github.com/c483481/bank_grpc_server/internal/application"
+	"github.com/c483481/bank_grpc_server/internal/repository"
 	"github.com/c483481/bank_grpc_server/migrations"
 	"github.com/joho/godotenv"
 	"log"
@@ -55,7 +56,9 @@ func main() {
 
 	log.Println("Successfully run database migration up.")
 
-	bs := &application.BankService{}
+	rba := repository.GetBankAccountRepository(db)
+
+	bs := application.GetBankService(rba)
 	grpcAdapter := adapter.NewGRPCAdapter(bs, 50000)
 
 	grpcAdapter.Run()
