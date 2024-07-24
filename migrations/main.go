@@ -9,7 +9,9 @@ type migration interface {
 }
 
 func getMigrations() []migration {
-	return []migration{}
+	return []migration{
+		getCreateBankAcc(),
+	}
 }
 
 func checkDuplicateMigrationNames(migrations []migration) {
