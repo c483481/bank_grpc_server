@@ -15,3 +15,7 @@ type BankExchangeRateDatabaseRepository interface {
 
 	GetExchangeRateAtTimestamp(from string, to string, ts time.Time) (database.BankExchangeRate, error)
 }
+
+type TransactionDatabaseRepository interface {
+	CreateTransaction(acc *database.BankAccount, t database.BankTransactions) (uuid.UUID, error)
+}
