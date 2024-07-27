@@ -12,4 +12,8 @@ type BankServiceType interface {
 	CreateExchangeRate(r bank.ExchangeRate) (uuid.UUID, error)
 
 	FindExchangeRate(from string, to string, ts time.Time) float64
+
+	CreateTransaction(acc string, t bank.Transaction) (uuid.UUID, error)
+
+	CalculateTransactionSummary(tcur *bank.TransactionSummary, trans bank.Transaction) error
 }

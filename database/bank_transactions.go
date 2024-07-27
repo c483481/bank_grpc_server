@@ -6,7 +6,7 @@ import (
 )
 
 type BankTransactions struct {
-	TransactionUuid      uuid.UUID `gorm:"column:account_uuid;primaryKey;not null;<-:create"`
+	TransactionUuid      uuid.UUID `gorm:"column:transaction_uuid;primaryKey;not null;<-:create"`
 	AccountUuid          uuid.UUID `gorm:"column:account_uuid;unique;not null;<-:create"`
 	TransactionTimestamp time.Time `gorm:"column:transaction_timestamp;not null;<-:create"`
 	Amount               float64   `gorm:"column:amount;not null;<-:create"`

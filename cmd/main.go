@@ -62,10 +62,11 @@ func main() {
 
 	rba := repository.GetBankAccountRepository(db)
 	eba := repository.GetExchangeRate(db)
+	tb := repository.NewBankTransaction(db)
 
-	bs := application.GetBankService(rba, eba)
+	bs := application.GetBankService(rba, eba, tb)
 
-	go generateExchanegRate(bs, "USD", "IDR", 5*time.Second)
+	//go generateExchanegRate(bs, "USD", "IDR", 5*time.Second)
 
 	grpcAdapter := adapter.NewGRPCAdapter(bs, 50000)
 

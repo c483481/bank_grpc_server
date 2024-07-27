@@ -3,7 +3,7 @@ module github.com/c483481/bank_grpc_server
 go 1.21.5
 
 require (
-	github.com/c483481/bank_grpc_proto v0.1.1
+	github.com/c483481/bank_grpc_proto v0.2.1
 	github.com/google/uuid v1.6.0
 	github.com/joho/godotenv v1.5.1
 	google.golang.org/genproto v0.0.0-20240722135656-d784300faade
